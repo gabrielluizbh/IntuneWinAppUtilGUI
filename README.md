@@ -27,9 +27,10 @@ IntuneWinAppUtilGUI.exe
 
  **6.** Após, selecionar todos os campos clique em execução para executar a conversão.
 
- **7.** Limpe todos os campos. (Opicional)
-
+ **7.** Limpe todos os campos. (Opcional)
  
+ **8.** Acesse o link do artigo. (Opcional)
+
  
   
 ## **Mais informações:**
