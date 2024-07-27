@@ -16,6 +16,7 @@ IntuneWinAppUtilGUI.exe
 ![image](https://github.com/user-attachments/assets/6236f6d5-db20-4664-aaca-9b5c47242273)
 
 **Neste exemplo estamos fazendo a conversar da instalação do 7-Zip (7z2407-x64.exe) para o arquivo .intunewin.**
+
  
  **1.** Baixei o arquivo IntuneWinAppUtil.exe e salve em qualquer pasta.
 
