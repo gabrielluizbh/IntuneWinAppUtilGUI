@@ -31,8 +31,7 @@ IntuneWinAppUtilGUI.exe
  
  **8.** Acesse o link do artigo. (Opcional)
 
- 
-  
+   
 ## **Mais informações:**
 
 **Para maior entendimento para execução do script acesse o link do artigo: https://gabrielluiz.com/2024/05/windows-event-forwarding/**
