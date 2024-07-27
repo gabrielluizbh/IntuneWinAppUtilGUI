@@ -19,7 +19,7 @@ IntuneWinAppUtilGUI.exe
  
  **1.** Baixei o arquivo IntuneWinAppUtil.exe e salve em qualquer pasta.
 
- **2.**  Selecione o arquivo IntuneWinAppUtil.exe, localizando o local em que o arquivo IntuneWinAppUtil.exe foi salvo.
+ **2.**  Selecione o arquivo IntuneWinAppUtil.exe, local em que o arquivo IntuneWinAppUtil.exe foi salvo.
 
  **3.** Selecione uma pasta. Todos os arquivos nesta pasta serão compactados em um arquivo .intunewin.
 
