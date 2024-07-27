@@ -37,7 +37,7 @@ IntuneWinAppUtilGUI.exe
    
 ## **Mais informações:**
 
-**Para maior entendimento para execução do script acesse o link do artigo: https://gabrielluiz.com/2024/05/windows-event-forwarding/**
+**Para maior entendimento para execução deste aplicativo acesse o link do artigo: https://gabrielluiz.com/2024/05/windows-event-forwarding/**
 
 **Créditos - Gabriel Luiz - www.gabrielluiz.com**
 
