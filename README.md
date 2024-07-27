@@ -13,6 +13,8 @@ IntuneWinAppUtilGUI.exe
 
 ## **Instruções:**
 
+![image](https://github.com/user-attachments/assets/1934a679-ac4b-4d47-b768-37e012bf858b)
+
 
 
 ## **Mais informações:**
