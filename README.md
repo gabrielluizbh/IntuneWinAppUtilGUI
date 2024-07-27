@@ -30,7 +30,7 @@ IntuneWinAppUtilGUI.exe
 
  **7.** Limpe todos os campos. (Opcional)
  
- **8.** Acesse o link do artigo. (Opcional)
+ **8.** Acesse o link do Blog do Gabriel Luiz. (Opcional)
 
    
 ## **Mais informações:**
