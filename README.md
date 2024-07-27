@@ -15,7 +15,9 @@ IntuneWinAppUtilGUI.exe
 
 ![image](https://github.com/user-attachments/assets/1934a679-ac4b-4d47-b768-37e012bf858b)
 
+ 1. Baixei o arquivo IntuneWinAppUtil.exe e salve em qualquer pasta.
 
+ 2. 
 
 ## **Mais informações:**
 
