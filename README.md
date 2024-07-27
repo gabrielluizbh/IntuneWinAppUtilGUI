@@ -17,15 +17,17 @@ IntuneWinAppUtilGUI.exe
 
  **1.** Baixei o arquivo IntuneWinAppUtil.exe e salve em qualquer pasta.
 
- **2.**  Selecione o arquivo IntuneWinAppUtil.exe.
+ **2.**  Selecione o arquivo IntuneWinAppUtil.exe, localizando o local em que o arquivo IntuneWinAppUtil.exe foi salvo.
 
  **3.** Selecione o local
 
  **4.** Selecione o arquivo de instalação.
 
- **5.**
+ **5.** Selecione o local aonde o arquivo .intunewin será criado.
 
  **6.** Após, selecionar todos os campos clique em execução para executar a conversão.
+
+ **7.** Limpe todos os campos. (Opicional)
 
  
  
