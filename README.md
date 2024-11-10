@@ -1,4 +1,4 @@
-# IntuneWinAppUtilGUI.
+# IntuneWinAppUtilGUI
 Ferramenta de converte arquivos de instalação de aplicativo no formato .intunewin.
 
 ![image](https://github.com/user-attachments/assets/3fdef248-895b-485b-916d-835a06b8212c)
