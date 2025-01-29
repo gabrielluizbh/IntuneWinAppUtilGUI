@@ -35,4 +35,4 @@ IntuneWinAppUtilGUI.exe
 
 **Para una mejor comprensión de la ejecución de esta aplicación, acceda al enlace del artículo: https://gabrielluiz.com/2024/08/intunewinapputilgui/**
 
-**Créditos - Gabriel Luiz - www.gabrielluiz.com**
+**Créditos - Gabriel Luiz - www.gabrielluiz.com y https://thiagobeier.wordpress.com/**
