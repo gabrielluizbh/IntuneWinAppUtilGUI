@@ -18,7 +18,6 @@
     Date: February 29, 2025
 #>
 
-
 # Define language options
 $languages = @{
     "en"    = @{
@@ -59,7 +58,46 @@ $languages = @{
         "AllFieldsWarning" = "Por favor, preencha todos os campos."
         "WarningMessage3"  = "Não foi possível carregar a imagem:"
     }
+    "fr"    = @{
+        "Title"            = "IntuneWinAppUtil GUI"
+        "ExeLabel"         = "IntuneWinAppUtil.exe:"
+        "SourceLabel"      = "Dossier Source:"
+        "FileLabel"        = "Fichier d'installation:"
+        "OutputLabel"      = "Dossier de sortie:"
+        "Select"           = "Sélectionner"
+        "Execute"          = "Exécuter"
+        "Clear"            = "Effacer"
+        "Download"         = "Télécharger IntuneWinAppUtil.exe"
+        "SuccessMessage"   = "Le fichier .intunewin a été généré avec succès!"
+        "ErrorMessage"     = "Échec de la génération du fichier .intunewin."
+        "WarningMessage"   = "Le fichier existe déjà et sera supprimé."
+        "WarningMessage1"  = "Avertissement"
+        "WarningMessage2"  = "Succès"
+        "ErrorMessage1"    = "Erreur"
+        "AllFieldsWarning" = "Veuillez remplir tous les champs requis."
+        "WarningMessage3"  = "Impossible de charger l'image:"
+    }
+    "es"    = @{
+        "Title"            = "IntuneWinAppUtil GUI"
+        "ExeLabel"         = "IntuneWinAppUtil.exe:"
+        "SourceLabel"      = "Carpeta de origen:"
+        "FileLabel"        = "Archivo de instalación:"
+        "OutputLabel"      = "Carpeta de salida:"
+        "Select"           = "Seleccionar"
+        "Execute"          = "Ejecutar"
+        "Clear"            = "Limpiar"
+        "Download"         = "Descargar IntuneWinAppUtil.exe"
+        "SuccessMessage"   = "¡El archivo .intunewin se generó correctamente!"
+        "ErrorMessage"     = "Error al generar el archivo .intunewin."
+        "WarningMessage"   = "El archivo ya existe y se eliminará."
+        "WarningMessage1"  = "Advertencia"
+        "WarningMessage2"  = "Éxito"
+        "ErrorMessage1"    = "Error"
+        "AllFieldsWarning" = "Por favor, complete todos los campos requeridos."
+        "WarningMessage3"  = "No se pudo cargar la imagen:"
+    }
 }
+
 
 # Create the language selection form
 $langForm = New-Object System.Windows.Forms.Form
@@ -71,7 +109,7 @@ $langForm.StartPosition = "CenterScreen"
 $comboBoxLanguage = New-Object System.Windows.Forms.ComboBox
 $comboBoxLanguage.Size = New-Object System.Drawing.Size(200, 20)
 $comboBoxLanguage.Location = New-Object System.Drawing.Point(50, 40)
-$comboBoxLanguage.Items.AddRange(@("English", "Portuguese"))
+$comboBoxLanguage.Items.AddRange(@("English", "Português", "Français", "Español"))
 $comboBoxLanguage.SelectedIndex = 0  # Default selection (English)
 $langForm.Controls.Add($comboBoxLanguage)
 
@@ -91,8 +129,14 @@ $buttonOK.Add_Click({
         if ($comboBoxLanguage.SelectedItem -eq "English") {
             $global:languageSelected = "en"
         }
-        elseif ($comboBoxLanguage.SelectedItem -eq "Portuguese") {
+        elseif ($comboBoxLanguage.SelectedItem -eq "Português") {
             $global:languageSelected = "pt-BR"
+        }
+        elseif ($comboBoxLanguage.SelectedItem -eq "Français") {
+            $global:languageSelected = "fr"
+        }
+        elseif ($comboBoxLanguage.SelectedItem -eq "Español") {
+            $global:languageSelected = "es"
         }
     
         # Debugging: output the selected language to verify
@@ -101,6 +145,7 @@ $buttonOK.Add_Click({
         # Close the language selection form
         $langForm.Close()
     })
+
 
 # Display the language selection form and block further execution until it's closed
 [System.Windows.Forms.Application]::Run($langForm)
