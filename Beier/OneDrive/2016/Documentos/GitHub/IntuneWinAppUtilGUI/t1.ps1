@@ -1,4 +1,5 @@
 # Ensure the script is compatible with PowerShell 7
+# Ensure the script is compatible with PowerShell 7
 if ($PSVersionTable.PSVersion.Major -ge 7) {
     # Load necessary assemblies
     Add-Type -AssemblyName System.Windows.Forms
@@ -147,6 +148,40 @@ if (-not $global:languageSelected) {
 # Now that the language is selected, load the appropriate language for the form
 $lang = $languages[$global:languageSelected]
 
+# Define functions for folder and file selection
+function Select-FolderDialog {
+    $folderBrowser = New-Object System.Windows.Forms.FolderBrowserDialog
+    if ($folderBrowser.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $folderBrowser.SelectedPath
+    }
+    return $null
+}
+
+function Select-FileDialog {
+    $fileBrowser = New-Object System.Windows.Forms.OpenFileDialog
+    if ($fileBrowser.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $fileBrowser.FileName
+    }
+    return $null
+}
+
+# Define function to show progress form
+function Show-ProgressForm {
+    $progressForm = New-Object System.Windows.Forms.Form
+    $progressForm.Text = "Generating .intunewin file"
+    $progressForm.Size = New-Object System.Drawing.Size(400, 100)
+    $progressForm.StartPosition = "CenterScreen"
+    $progressForm.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    $progressForm.ControlBox = $false
+
+    $progressBar = New-Object System.Windows.Forms.ProgressBar
+    $progressBar.Style = [System.Windows.Forms.ProgressBarStyle]::Marquee
+    $progressBar.Dock = [System.Windows.Forms.DockStyle]::Fill
+    $progressForm.Controls.Add($progressBar)
+
+    return $progressForm
+}
+
 # Define functions to save and load form data
 function Save-FormData {
     $formData = @{
@@ -155,14 +190,14 @@ function Save-FormData {
         FilePath   = $textBoxFile.Text
         OutputPath = $textBoxOutput.Text
     }
-    $json = [System.Text.Json.JsonSerializer]::Serialize($formData)
+    $json = $formData | ConvertTo-Json
     Set-Content -Path "formData.json" -Value $json
 }
 
 function Load-FormData {
     if (Test-Path "formData.json") {
         $json = Get-Content -Path "formData.json" -Raw
-        $formData = [System.Text.Json.JsonSerializer]::Deserialize($json, [Hashtable])
+        $formData = $json | ConvertFrom-Json
         $textBoxExe.Text = $formData.ExePath
         $textBoxSource.Text = $formData.SourcePath
         $textBoxFile.Text = $formData.FilePath
@@ -181,7 +216,7 @@ function Clear-FormData {
 # Initialize form and controls
 $form = New-Object System.Windows.Forms.Form
 $form.Text = $lang["Title"]
-$form.Size = New-Object System.Drawing.Size(800, 400)  # Increased form width
+$form.Size = New-Object System.Drawing.Size(800, 500)  # Increased form width
 $form.StartPosition = "CenterScreen"
 
 # Add personalized icon to the form
@@ -322,7 +357,7 @@ $buttonExecute.Add_Click({
             $progressForm.Close()
 
             if (Test-Path $intunewinFile) {
-                [System.Windows.Forms.MessageBox]::Show($lang["WarningMessage"], $lang["WarningMessage2"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+                [System.Windows.Forms.MessageBox]::Show($lang["successmessage"], $lang["WarningMessage2"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
             }
             else {
                 [System.Windows.Forms.MessageBox]::Show($lang["ErrorMessage"], $lang["ErrorMessage1"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
@@ -354,6 +389,8 @@ $buttonDownload.Add_Click({
         Start-Process "https://raw.githubusercontent.com/microsoft/Microsoft-Win32-Content-Prep-Tool/master/IntuneWinAppUtil.exe"
     })
 $form.Controls.Add($buttonDownload)
+
+
 
 # Add image below the download button
 try {
