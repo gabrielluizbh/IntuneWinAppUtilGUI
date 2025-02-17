@@ -1,3 +1,24 @@
+<#
+.SYNOPSIS
+    This script provides a GUI to use IntuneWinAppUtil.exe
+
+.DESCRIPTION
+    This PowerShell script is a GUI to assist on app packaging using .
+    
+.PARAMETER command
+    Load the tool, run the PS1 file and select your preferred language.
+
+      
+.EXAMPLE
+    .\IntuneWinAppUtilGUI.ps1
+    
+.NOTES
+    Author: https://github.com/gabrielluizbh
+	Contributor: Added Eng and PT-BR language options on the GUI (forms)
+    Date: February 17, 2025
+    Version: 1.0.1 - fixed the language selection issue and Success Message 
+#>
+
 # Ensure the script is compatible with PowerShell 7
 # Ensure the script is compatible with PowerShell 7
 if ($PSVersionTable.PSVersion.Major -ge 7) {
