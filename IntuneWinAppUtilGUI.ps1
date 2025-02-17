@@ -15,7 +15,8 @@
 .NOTES
     Author: https://github.com/gabrielluizbh
 	Contributor: Added Eng and PT-BR language options on the GUI (forms)
-    Date: February 29, 2025
+    Date: February 17, 2025
+    Version: 1.0.1 - fixed the language selection issue and Success Message 
 #>
 
 # Define language options
@@ -393,7 +394,7 @@ $buttonExecute.Add_Click({
             $progressForm.Close()
 
             if (Test-Path $intunewinFile) {
-                [System.Windows.Forms.MessageBox]::Show($lang["successmessage"], $lang["WarningMessage2"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+                [System.Windows.Forms.MessageBox]::Show($lang["SuccessMessage"], $lang["WarningMessage2"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
             }
             else {
                 [System.Windows.Forms.MessageBox]::Show($lang["ErrorMessage"], $lang["ErrorMessage1"], [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
